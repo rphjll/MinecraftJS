@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Minecraft JS</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="loading">
+
+<h1>Minecraft JS</h1>
+
+<p>Clique pour jouer</p>
+
+<p class="controls">
+    ZQSD / WASD : se déplacer — Espace : sauter — Souris : regarder<br>
+    Clic gauche : casser — Clic droit : poser — 1-9 ou molette : choisir le bloc
+</p>
+
+</div>
+
+<div id="crosshair"></div>
+
+<div id="inventory" aria-label="Inventaire">
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+    <div class="inventory-slot"></div>
+</div>
+
+<script type="importmap">
+{
+    "imports": {
+        "three":"https://unpkg.com/three@0.165.0/build/three.module.js"
+    }
+}
+</script>
+
+<script type="module" src="main.js"></script>
+
+</body>
+
+</html>

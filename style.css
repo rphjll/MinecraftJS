@@ -1,0 +1,241 @@
+/* =====================
+   BASE DE LA PAGE
+===================== */
+
+html,
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #87CEEB;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* =====================
+   CANVAS 3D
+===================== */
+
+canvas {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* =====================
+   ECRAN DE DEPART
+===================== */
+
+#loading {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #87CEEB;
+
+    color: white;
+
+    z-index: 100;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+#loading h1 {
+
+    font-size: 50px;
+
+    margin-bottom: 20px;
+
+    text-shadow: 3px 3px 5px black;
+
+}
+
+
+#loading p {
+
+    font-size: 25px;
+
+    text-shadow: 2px 2px 4px black;
+
+}
+
+#loading p.controls {
+
+    font-size: 16px;
+
+    margin-top: 16px;
+
+    max-width: 600px;
+
+    text-align: center;
+
+}
+
+
+
+/* =====================
+   VISEUR AU CENTRE
+===================== */
+
+#crosshair {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+
+    height: 20px;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+}
+
+
+
+#crosshair::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 9px;
+
+    width: 2px;
+
+    height: 20px;
+
+    background: white;
+
+}
+
+
+
+#crosshair::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 9px;
+
+    left: 0;
+
+    width: 20px;
+
+    height: 2px;
+
+    background: white;
+
+}
+
+
+/* =====================
+   INVENTAIRE
+===================== */
+
+#inventory {
+
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3px;
+    z-index: 60;
+    pointer-events: none;
+
+}
+
+.inventory-slot {
+
+    position: relative;
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    border: 3px solid #444;
+    border-top-color: #eee;
+    border-left-color: #eee;
+    background: rgba(25, 25, 25, 0.8);
+
+}
+
+.inventory-slot.selected {
+
+    border-color: #fff;
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
+
+}
+
+.item-icon {
+
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 8px;
+    top: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    box-sizing: border-box;
+
+}
+
+.item-icon.grass { background: #4caf50; }
+.item-icon.dirt { background: #8b5a2b; }
+.item-icon.wood { background: #6b421e; }
+.item-icon.leaves { background: #2e7d32; }
+.item-icon.stone { background: #8a8a8a; }
+.item-icon.sand { background: #ddc78f; }
+
+.item-count {
+
+    position: absolute;
+    right: 3px;
+    bottom: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+
+}
